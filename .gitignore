@@ -1,52 +1,73 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+void shape(char shapeName[10]){
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int i,j;
 
-# Linker output
-*.ilk
-*.map
-*.exp
+int lenght=strlen(shapeName);
 
-# Precompiled Headers
-*.gch
-*.pch
+for(i=0; i<5;i++){
+    for (j = 0; j < 20; j++)
+    {
+        
+        if (!(i==0 || i == 4) && (j>=1 && j < 19))
+        {
+            if (i==2 && j > 18-lenght)
+            {
+                continue;
+            }
+            else
+            {
+              printf(" ");  
+            }
+            
+            
+            
+        }
+            else
+            {
+                printf("#");
+            } 
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+/*
+        if (i==2 && j == 18 - lenght)
+        {
+            printf("#");
+        }
+*/
+        if (i==2 && j >= 6 && j<7)
+        {
+            system("color 04");
+           printf("%s",shapeName);
+        }     
+        
+    }
+    
+    printf("\n");
+    
+}        
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+}
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+int main(){
+/*
+char shapeName[10]={};
+
+printf("Girmek istedğiniz kelime: ");
+scanf("%s",shapeName);
+
+system("clear");
+*/
+
+shape("Welcome");
+}
+ 
+ 
+ 
+   return 0;
+}
+
